@@ -27,6 +27,8 @@
 
 
 // Method 1: Using Hash tables
+// Runtime: O(n)
+// Space: O(1)
 function isHappy(n) {
     let copyN = n; // don't want to change the input
     let hash = {};
@@ -53,6 +55,9 @@ function isHappy(n) {
 // the idea is that the hare is supposed to move faster than the tortoise. If there's a cycle, there will be at one or various points
 // where the tortoise and the hare are at the same spot (excluding the beginning). If that's the case, then there is a cycle.
 // But if the hare reaches the finish line first, then we found our happy number.
+
+// Runtime: O(n)
+// Space: O(1)
 function isHappy(n) {
     let tortoise = n;
     let hare = n;
