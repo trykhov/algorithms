@@ -36,23 +36,23 @@ And lastly during each iteration, we simply compare the current collective sum t
 
 Javascript:
 
-function maxSubArray(nums) {
-    if(nums.length === 1) return nums[0];
-    // this records the current sum
-    let currSum = nums[0];
-    // have a max sum that records the largest sum
-    let maxSum = nums[0];
-    for(let i = 1; i < nums.length; i++) {
-        // update the sum:
-        // 1. sum becomes the element if the sum < 0
-        // 2. element is added to the sum if the sum > 0
-        currSum = currSum < 0 ? nums[i] : currSum + nums[i];
+    function maxSubArray(nums) {
+        if(nums.length === 1) return nums[0];
+        // this records the current sum
+        let currSum = nums[0];
+        // have a max sum that records the largest sum
+        let maxSum = nums[0];
+        for(let i = 1; i < nums.length; i++) {
+            // update the sum:
+            // 1. sum becomes the element if the sum < 0
+            // 2. element is added to the sum if the sum > 0
+            currSum = currSum < 0 ? nums[i] : currSum + nums[i];
 
-        // update the max sum
-        maxSum = Math.max(maxSum, currSum);
+            // update the max sum
+            maxSum = Math.max(maxSum, currSum);
+        }
+        return maxSum;
     }
-    return maxSum;
-}
 
 
 `Runtime: O(n)` (loop through every element of the array)
